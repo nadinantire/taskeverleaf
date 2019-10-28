@@ -1,0 +1,18 @@
+<div class ="controler">
+<h1>Log in</h1>
+<%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+<div class="fielder">
+ <%= f.label :email %>
+ <%= f.email_field :email, placeholder: "Ether your Email", class:"form-control" %>
+ </div>
+<div class="fielder">
+ <%= f.label :password %>
+ <%= f.password_field :password, placeholder: "Ether your Email", class:"form-control" %>
+ </div>
+ <div class="action">
+ <%= f.submit "Log in", class:"btn btn-primary actions "  %><br><br>
+ </div>
+<% end %>
+</div>
+
+

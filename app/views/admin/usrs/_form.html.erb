@@ -1,0 +1,39 @@
+
+<%= form_with(model: usr, local: true) do |form| %>
+  <% if usr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(usr.errors.count, "error") %> prohibited this usr from being saved:</h2>
+
+      <ul>
+      <% usr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="fielder">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="fielder">
+    <%= form.label :email %>
+    <%= form.text_field :email, class:"form-control" %>
+  </div>
+  <div class="form-group">
+   <%= form.label :UserType %>
+   <%= form.select(:role, options_for_select([['User','User'],['Admin','Admin']])) %>
+  </div>
+
+  <div class="fielder">
+    <%= form.label :password %>
+    <%= form.text_field :password, class:"form-control" %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Usrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>User Type</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usrs.each do |usr| %>
+      <tr>
+        <td><%= usr.name %></td>
+        <td><%= usr.email %></td>
+        <td><%= usr.role %></td>
+        <td><%= usr.password %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Usr', new_usr_path %>

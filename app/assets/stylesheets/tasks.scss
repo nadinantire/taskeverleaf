@@ -1,0 +1,98 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.head{
+    background-color: #1a3e59;
+    height: 70px;
+}
+hr{
+    color: blue;
+}
+.form22, .show{
+    width:60%;
+    padding:20px;
+    background:whitesmoke;
+    margin: auto;
+   
+}
+.container{
+    width: 100%
+}
+.show{
+    width:81%;
+    padding:20px;
+    background:whitesmoke;
+    float: right;
+    // margin: auto;
+    // position: absolute;
+    // right: 60px;
+    // bottom: 175px;
+    border-end-end-radius: 20px red;
+    
+}
+.menu{
+    background-color: whitesmoke;
+    width:18%;
+    margin-top: 10px;
+    float: left;
+}
+.list{
+    border: 1px, darkgoldenrod solid;
+    list-style: none;
+    border-radius: 1px;
+    width: 200px;
+    padding: 20px;
+
+}
+.list li{
+    font-size: 20px;
+    line-height: 2.4em;
+    border-bottom: dotted 1px rgb(26, 22, 22)
+
+}
+.list li a:hover{
+    color:blue;
+}
+.list li a {
+    text-decoration: none;
+   
+}
+.fielder{
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.controler{
+    background-image: radial-gradient(circle, rgb(53, 120, 158), white, rgb(53, 120, 158));
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 20px;  
+}
+
+.actions{
+    // width: 50px;
+    margin-left: 60px;
+    // margin-right: 60px;
+    // float: right !important;
+    // margin-top: 10px;
+    // margin-bottom: 1rem;
+    width: 31.5rem;
+
+}
+
+ .bodyp{
+    width: 70%;
+    margin: auto;
+    border-radius: 10px blue solid;
+}
+.bodypp{
+    width: 60%;
+    background-color: #504f52 ;
+}
+h2{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+

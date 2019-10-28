@@ -1,0 +1,59 @@
+<div class="form22">
+<%= form_with(model: task, local: true) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_field :content, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :stutus %>
+    <%= form.text_field :status, class:"form-control" %>
+  </div>
+
+  <div class="form-group">
+  <%= form.label :priority %>
+    <%= form.radio_button :priority, 'low' %> low  <%= form.radio_button :priority, 'medium' %> medium <%= form.radio_button :priority, 'hight' %> high
+  </div>
+
+  <div class="form-group">
+   
+    <%= form.hidden_field :usr_id %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+    <div class="field">
+
+    <%= form.hidden_field :usr_id, value: current_usr.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+</div>
