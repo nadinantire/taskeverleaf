@@ -5,14 +5,18 @@ class TasksController < ApplicationController
 
   # GET /tasks
   def index
-    if  params[:sort_expired]
-      @tasks = Task.order('end_date DESC').page(params[:page])
+    @tasks = if  params[:sort_expired]
+      Task.order('end_date DESC').page(params[:page])
     elsif params[:sort_priority] 
-      @tasks = Task.order('priority DESC').page(params[:page])
+      Task.order('priority DESC').page(params[:page])
     elsif params[:terms]
-      @tasks = Task.where('content like ? or status like ?', "%#{params[:terms]}%", "%#{params[:terms]}%").order('id ASC').page(params[:page])
+     Task.where('content like ? or status like ?', "%#{params[:terms]}%", "%#{params[:terms]}%").order('id ASC').page(params[:page])
+    elsif  params[:key]
+      Task.joins(:labels)
+      .where("labels.name LIKE ?", "%#{params[:key]}%").page(params[:page])
+  
     else
-      @tasks = Task.order('created_at DESC').page(params[:page])
+      Task.order('created_at DESC').page(params[:page])
     end
   end
 
@@ -67,6 +71,6 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:name, :content, :status, :priority, :usr_id, :terms, :start_date, :end_date, label_ids:[])
+      params.require(:task).permit(:name, :content, :status, :priority, :usr_id, :terms, :start_date, :end_date, :key, label_ids:[])
     end
 end

@@ -94,7 +94,16 @@ RSpec.feature "Task management function", type: :feature do
   expect(page ).to have_text('Task was successfully created.')
   visit tasks_path
   fill_in  'terms' ,  with: 'testtesttest'
-  click_on 'Search'
+  click_on 'Searche'
   expect(page).to have_content('testtesttest')
+end
+scenario "can search by attached labels " do
+  visit new_label_path
+  fill_in 'Name', with: 'label1'
+  fill_in 'Content', with: 'testlabel1'
+  click_on '登録する'
+  visit tasks_path
+  fill_in  'key' ,  with: 'testtesttest'
+  click_on 'Search'
 end
 end

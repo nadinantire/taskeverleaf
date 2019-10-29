@@ -4,14 +4,20 @@
 <li><%= link_to 'New Task', new_task_path %></li>
 <li><%= link_to 'sort expiration', tasks_path(sort_expired: 'true') %></li>
 <li><%= link_to 'sort by priority', tasks_path(sort_priority: 'true') %></li>
+<li><%= link_to 'New Label', new_label_path %></li>
 </div>
 <div class="show">
 <%= form_tag(tasks_path, method: :get) do  %>
              <div class="form-inline my-2 my-lg-0">
                <%= text_field_tag :terms, params[:terms], placeholder: "search by content" %>
-               <%= submit_tag 'Search', name:nil %>
+               <%= submit_tag 'Searche', name:nil %>
+        
              </div>
-           <% end %>
+           <% end %><br>
+               <%= form_tag(tasks_path, method: :get) do %>
+                  <%= text_field_tag :key, params[:key], placeholder: "search by label" %>
+                  <%= submit_tag 'Search' %>
+                <% end %>
 <p id="notice"><%= notice %></p>
 <h1><%= t('view.ALL TASKS')%></h1>
 <table class="table">

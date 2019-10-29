@@ -22,8 +22,10 @@
   </div>
 
   <div class="field">
-    <%= form.label :usr_id %>
-    <%= form.text_field :usr_id %>
+       <div class="field">
+
+    <%= form.hidden_field :usr_id, value: current_usr.id %>
+  </div>
   </div>
 
   <div class="actions">
