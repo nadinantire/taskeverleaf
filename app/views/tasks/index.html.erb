@@ -29,10 +29,7 @@
 
   <tbody>
     <% @tasks.each do |task| %>
-<<<<<<< HEAD
       <% if current_usr.id == task.usr_id %>
-=======
->>>>>>> de01cb4f7990c53b11b66ce2345abcd92336ceb8
       <tr>
         <td><%= task.name %></td>
         <td><%= task.content %></td>
@@ -44,10 +41,7 @@
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-<<<<<<< HEAD
       <% end %>
-=======
->>>>>>> de01cb4f7990c53b11b66ce2345abcd92336ceb8
     <% end %>
   </tbody>
 </table>
