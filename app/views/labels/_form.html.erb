@@ -1,3 +1,4 @@
+<div class="form22">
 <%= form_with(model: label, local: true) do |form| %>
   <% if label.errors.any? %>
     <div id="error_explanation">
@@ -10,23 +11,21 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+<div class="form-group">
+ <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, class:"form-control" %>
   </div>
 
-  <div class="field">
-       <div class="field">
-
+ <div class="form-group">
     <%= form.hidden_field :usr_id, value: current_usr.id %>
   </div>
-  </div>
+</div>
 
   <div class="actions">
     <%= form.submit %>
